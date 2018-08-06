@@ -1,7 +1,7 @@
 cc = clang
 include_dirs = .
 
-all: 1 2 3 4 5 6 7 8 9 10 11
+all: 1 2 3 4 5 6 7 8 9 10 11 12 13
 
 clean:
 	rm */main *.o
@@ -39,6 +39,12 @@ clean:
 11: 11.o
 	$(cc) main.o -I $(include_dirs) -o 11/main -lm
 
+12: 12.o
+	$(cc) main.o -I $(include_dirs) -o 12/main -lm
+
+13: 13.o
+	$(cc) main.o -I $(include_dirs) -o 13/main
+
 gcd.o: common/gcd.c
 	$(cc) -c common/gcd.c -I $(include_dirs)
 
@@ -74,3 +80,9 @@ gcd.o: common/gcd.c
 
 11.o: 11/main.c
 	$(cc) -c 11/main.c -I$(include_dirs)
+
+12.o: 12/main.c
+	$(cc) -c 12/main.c -I$(include_dirs)
+
+13.o: 13/main.c
+	$(cc) -c 13/main.c -I$(include_dirs)
